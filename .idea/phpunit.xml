@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PHPUnit">
+    <option name="directories">
+      <list>
+        <option value="$PROJECT_DIR$/onix/tests/Unit" />
+        <option value="$PROJECT_DIR$/onix/tests/Feature" />
+        <option value="$PROJECT_DIR$/docker/tests/Unit" />
+        <option value="$PROJECT_DIR$/docker/tests/Feature" />
+      </list>
+    </option>
+  </component>
+</project>
