@@ -29,6 +29,14 @@
                 <input type="text" class="form-control" name="image_url" id="image_url">
             </div>
             <div class="form-group mb-3">
+                <label for="image_url" class="form-label">Көрілім саны</label>
+                <input type="text" class="form-control" name="views" id="image_url">
+            </div>
+            <div class="form-group mb-3">
+                <label for="image_url" class="form-label">Пікірлер саны</label>
+                <input type="text" class="form-control" name="comments_count" id="image_url">
+            </div>
+            <div class="form-group mb-3">
                 <label for="news_text" class="form-label">Текст</label>
                 <textarea class="form-control" name= "news_text" id="news_text" rows="3"></textarea>
             </div>

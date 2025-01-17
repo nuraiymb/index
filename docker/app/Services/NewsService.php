@@ -1,44 +1,50 @@
 <?php
+
+
 namespace App\Services;
+
 use App\Models\News;
-use App\Services\Interfaces\NewsServiceInterface;
+use App\Repositories\NewsRepository;
 use Illuminate\Http\Request;
 
-class NewsService implements NewsServiceInterface
+class NewsService
 {
+    public function __construct(private  NewsRepository $newsRepository)
+    {
+
+    }
+
     public function getAll()
     {
-        return News::all();
+        return $this->newsRepository->all();
     }
     public function getById($id)
     {
-        return News::find($id);
+        return $this->newsRepository->findById($id);
+    }
+
+    public function update(int $id, array $data ): News
+    {
+        $news = $this->getById($id);
+
+        $this->newsRepository->update($news, $data);
+
+        return $news;
+    }
+
+    public function create(array $data):bool
+    {
+        $data['views'] =0;
+        $data['comments_count'] =0;
+
+        return $this->newsRepository->create($data);
+
+
 
     }
 
-    public function update( Request $request)
+    public function delete(int $id)
     {
-        $news = News::find($request->id);
-        $news->title = $request->title;
-        $news->author = $request->author;
-        $news->image_url = $request->image_url;
-        $news->text = $request->news_text;
-        $news->views = $request->views;
-        $news->comments_count = $request->comments_count;
-
-        $news->save();
-    }
-
-    public function create(array $data)
-    {
-        $news = new News();
-        $news->title = $data['title'];;
-        $news->author = $data['author'];
-        $news->image_url=$data['image_url'];
-        $news->text = $data['news_text'];
-        $news->views = 0;
-        $news->comments_count = 0;
-
-        $news->save();
+        return $this->newsRepository->delete($id);
     }
 }

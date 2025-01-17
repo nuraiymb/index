@@ -5,6 +5,10 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PersonPageController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/example', function () {
+    return response()->json(['message' => 'This is an API route']);
+});
+
 Route::get('/',[NewsController::class,'index'])
     ->name('homepage');
 
