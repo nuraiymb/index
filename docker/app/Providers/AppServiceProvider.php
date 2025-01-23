@@ -11,7 +11,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class;
     }
 
     /**
@@ -22,3 +22,4 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 }
+

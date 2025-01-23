@@ -18,7 +18,7 @@ Route::get('/news/create-page',[HomePageController::class,'getCreateNewsPage'])
 Route::post('/news',[NewsController::class,'create'])
     ->name('create-news-post');
 
-Route::get ('/news/{id}',[NewsController::class,'detail'])
+Route::get ('/news/{id}',[NewsController::class,'detail'])->middleware('checkType')
     ->name('one-news');
 
 Route::get ('/news/update/{id}',[NewsController::class,'getUpdatePage'])

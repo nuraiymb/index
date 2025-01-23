@@ -12,7 +12,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->alias([
+            'checkType' => \App\Http\Middleware\CheckType::class,
+        ]);
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
