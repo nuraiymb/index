@@ -15,7 +15,7 @@ class CheckType
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->type !=2) {
+        if ($request->type ==2) {
             return response()->json('Пожалуйста введите корректные данные',400);
         }
         return $next($request);

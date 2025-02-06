@@ -14,13 +14,14 @@ Route::group([
 ], function () {
     Route::post('login', [AuthController::class, 'login']);
     Route::post('registration', [AuthController::class, 'registration']);
-    Route::post('logout', [AuthController::class, 'logout']);
-    Route::post('refresh', [AuthController::class, 'refresh']);
-    Route::post('me', [AuthController::class, 'me']);
+    Route::post('logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+    Route::post('refresh', [AuthController::class, 'refresh'])->middleware('auth:sanctum');
+    Route::post('me', [AuthController::class, 'me'])->middleware('auth:sanctum');
 });
 
-Route::get('/news',[NewsController::class,'indexApi']);
+Route::get('/news', [NewsController::class, 'indexApi'])->middleware('auth:sanctum');
 
-Route::get('/news/{id}',[NewsController::class,'detailApi']);
+Route::get('/news/{id}', [NewsController::class, 'detailApi'])->middleware('auth:sanctum');
 
-Route::post('/news',[NewsController::class,'createApi']);
+Route::post('/news', [NewsController::class, 'createApi'])->middleware('auth:sanctum');
+

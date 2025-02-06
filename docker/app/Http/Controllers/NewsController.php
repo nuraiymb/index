@@ -45,6 +45,7 @@ class NewsController extends Controller
     public function createApi(NewsCreateRequest $request)
     {
         $data = $request->validated();
+        $data['author'] = auth()->user()->name;
 
         $this->newsService->create($data);
         return response()->json([

@@ -23,7 +23,6 @@ class NewsCreateRequest extends FormRequest
     {
         return [
             'title' => 'required|string|min:5',
-            'author' => 'required|string|min:5',
             'image_url' => 'required|string|min:5',
             'news_text' => 'required|string|min:5|max:1000',
 
