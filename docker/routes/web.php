@@ -5,9 +5,9 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\PersonPageController;
 use Illuminate\Support\Facades\Route;
 
-//Route::get('/login', function () {
-//    return response()->json(['error' => 'Unauthorized'], 401);
-//})->name('login');
+Route::get('/login', function () {
+    return response()->json(['error' => 'Unauthorized'], 401);
+})->name('login');
 
 Route::get('/example', function () {
     return response()->json(['message' => 'This is an API route']);

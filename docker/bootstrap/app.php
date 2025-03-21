@@ -20,11 +20,12 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
 
         //$middleware->group('api', [
-         //   EnsureFrontendRequestsAreStateful::class,
-         //   'auth:sanctum',
-         //   SubstituteBindings::class,
-        ]);
-    })
+          //  EnsureFrontendRequestsAreStateful::class,
+            //'auth:sanctum',
+            //SubstituteBindings::class,
+        //]);
+    }) // Осы жердегі жабылатын `}` дұрыс орналастырылды
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
+

@@ -34,6 +34,7 @@ class NewsService
 
     public function create(array $data):bool
     {
+        $data['user_id'] = auth()->user()->id;
         $data['views'] =0;
         $data['comments_count'] =0;
 

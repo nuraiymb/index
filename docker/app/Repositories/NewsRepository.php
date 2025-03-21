@@ -34,7 +34,7 @@ class NewsRepository
 
         $news = new News();
         $news->title = $data['title'];
-        $news->author = $data['author'];
+        $news->user_id = $data['user_id'];
         $news->image_url = $data['image_url'];
         $news->text = $data['news_text'];
         $news->views = $data['views'];

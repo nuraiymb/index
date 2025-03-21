@@ -32,6 +32,20 @@ class NewsController extends Controller
             'data' => $news,
         ]);
     }
+    public function myNews()
+    {
+        return response()->json([
+            'success' => true,
+            'data' => auth()->user()->news,
+        ]);
+    }
+    public function myCourses()
+    {
+        return response()->json([
+            'success' => true,
+            'data' => auth()->user()->courses,
+        ]);
+    }
 
 
     public function create(NewsCreateRequest $request)
@@ -45,7 +59,7 @@ class NewsController extends Controller
     public function createApi(NewsCreateRequest $request)
     {
         $data = $request->validated();
-        $data['author'] = auth()->user()->name;
+
 
         $this->newsService->create($data);
         return response()->json([
