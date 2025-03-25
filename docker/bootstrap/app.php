@@ -19,11 +19,11 @@ return Application::configure(basePath: dirname(__DIR__))
             'auth:sanctum' => \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
         ]);
 
-        //$middleware->group('api', [
-          //  EnsureFrontendRequestsAreStateful::class,
-            //'auth:sanctum',
-            //SubstituteBindings::class,
-        //]);
+        $middleware->group('api', [
+            EnsureFrontendRequestsAreStateful::class,
+            'auth:sanctum',
+            SubstituteBindings::class,
+        ]);
     }) // Осы жердегі жабылатын `}` дұрыс орналастырылды
     ->withExceptions(function (Exceptions $exceptions) {
         //

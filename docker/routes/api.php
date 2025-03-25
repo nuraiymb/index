@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\NewsController;
+use App\Http\Controllers\NewsControllercd;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +20,7 @@ Route::group([
     Route::post('me', [AuthController::class, 'me'])->middleware('auth:sanctum');
 
 });
+
 
 Route::get('/news', [NewsController::class, 'indexApi'])->middleware('auth:sanctum');
 Route::get('/my-news', [NewsController::class, 'myNews'])->middleware('auth:sanctum');
